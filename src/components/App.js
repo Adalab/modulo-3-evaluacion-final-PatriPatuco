@@ -4,6 +4,7 @@ import Filters from './Filters/Filters';
 import Characters from "./Characters/Characters";
 import CharDetail from './CharDetail';
 import api from "../services/api"
+import ls from "../services/localstorage"
 import { useEffect, useState } from 'react';
 import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 
@@ -13,6 +14,7 @@ function App() {
   const [chars, setChars] = useState([]);
   const [houseFiltered, setHouseFiltered] = useState("Gryffindor");
   const [charFiltered, setCharFiltered] = useState("");
+  const [localInput, setLocalInput] = useState("");
   const [errorMsg, setErrorMsg] = useState(false);
 
   const handleHouseFiltered = (value) => {
@@ -30,12 +32,13 @@ function App() {
     );
   };
 
-  // Set error message if the filtered character list is empty
+  // Set error message if the filtered character list is empty (doesn't match with the names on chars list)
   useEffect(() => {
     const filteredChars = getCharFiltered();
     if (filteredChars.length === 0) {
       setErrorMsg(true);
     } else {
+      setLocalInput(filteredChars);
       setErrorMsg(false);
     }
   }, [charFiltered, chars]);
