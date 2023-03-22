@@ -6,10 +6,13 @@ function api(house) {
         return {
           id: eachChar.id,
           name: eachChar.name,
+          aka: eachChar.alternate_names,
+          gender: eachChar.gender,
           species: eachChar.species,
           house: eachChar.house,
           alive: eachChar.alive,
           image: eachChar.image,
+
         };
       });
       return dataChar;

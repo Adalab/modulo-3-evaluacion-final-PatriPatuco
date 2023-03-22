@@ -1,10 +1,11 @@
 import '../styles/App.scss';
 import Header from './Header';
-import Filters from './Filters';
-import Characters from "./Characters";
+import Filters from './Filters/Filters';
+import Characters from "./Characters/Characters";
 import CharDetail from './CharDetail';
 import api from "../services/api"
 import { useEffect, useState } from 'react';
+import {Routes, Route} from "react-router-dom";
 
 
 
@@ -28,7 +29,7 @@ function App() {
     );
   }
 
-// Show the house acording to the value of the select input
+// Show the house acording to the value of the selected input
 useEffect(() => {
   api(houseFiltered).then((dataChar) => {
     setChars(dataChar);
@@ -37,14 +38,26 @@ useEffect(() => {
 
   return (
     <div className="App">
-      <Header />
-      <Filters
-        handleHouseFiltered={handleHouseFiltered}
-        handleCharFiltered={handleCharFiltered}
-        charFiltered={charFiltered}
-        houseFiltered={houseFiltered}
-      />
-      <Characters chars={getCharFiltered()} />
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <>
+              <Header />
+              <Filters
+                handleHouseFiltered={handleHouseFiltered}
+                handleCharFiltered={handleCharFiltered}
+                charFiltered={charFiltered}
+                houseFiltered={houseFiltered}
+              />
+              <Characters chars={getCharFiltered()} />
+            </>
+          }
+        ></Route>
+        <Route></Route>
+      </Routes>
+
+      <CharDetail chars={chars} />
     </div>
   );
 }

@@ -3,12 +3,12 @@ import HouseFilter from "./HouseFilter";
 
 function Filters({ handleHouseFiltered, handleCharFiltered, charFiltered }) {
   return (
-    <fieldset className="form">
+    <form className="form">
       <CharFilter
         handleCharFiltered={handleCharFiltered} charFiltered = {charFiltered}
       />
       <HouseFilter handleHouseFiltered={handleHouseFiltered} />
-    </fieldset>
+    </form>
   );
 }
 
