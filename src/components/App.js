@@ -5,7 +5,7 @@ import Characters from "./Characters/Characters";
 import CharDetail from './CharDetail';
 import api from "../services/api"
 import { useEffect, useState } from 'react';
-import {Routes, Route} from "react-router-dom";
+import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 
 
 
@@ -36,28 +36,37 @@ useEffect(() => {
   });
 }, [houseFiltered]);
 
+// Send character information to the character detail page
+const {pathname} = useLocation();
+const dataUrl = matchPath("/character/:id", pathname);
+const characterId = dataUrl !== null ? dataUrl.params.id : null;
+const characterFind = getCharFiltered().find((eachChar) =>eachChar.id === characterId);
+
   return (
     <div className="App">
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Header />
-              <Filters
-                handleHouseFiltered={handleHouseFiltered}
-                handleCharFiltered={handleCharFiltered}
-                charFiltered={charFiltered}
-                houseFiltered={houseFiltered}
-              />
-              <Characters chars={getCharFiltered()} />
-            </>
-          }
-        ></Route>
-        <Route></Route>
-      </Routes>
-
-      <CharDetail chars={chars} />
+      <Header />
+      <main className="main">
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Filters
+                  handleHouseFiltered={handleHouseFiltered}
+                  handleCharFiltered={handleCharFiltered}
+                  charFiltered={charFiltered}
+                  houseFiltered={houseFiltered}
+                />
+                <Characters chars={getCharFiltered()} />
+              </>
+            }
+          ></Route>
+          <Route
+            path="/character/:id"
+            element={<CharDetail characterFind={characterFind} />}
+          ></Route>
+        </Routes>
+      </main>
     </div>
   );
 }

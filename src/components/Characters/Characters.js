@@ -1,8 +1,13 @@
 import CharCard from "./CharCard";
+import { Link } from "react-router-dom";
 
 function Characters({chars}){
 const printChars = chars.map((eachChar) => {
-  return <CharCard eachChar={eachChar} key={eachChar.id} />;
+  return (
+    <Link to={`/character/${eachChar.id}`}>
+      <CharCard eachChar={eachChar} key={eachChar.id} />
+    </Link>
+  );
 });
 
     return (
