@@ -1,4 +1,16 @@
 /* Aquí van tus estilos */
+@import "./core/reset";
+@import "./core/variables";
+
+@import "./partials/characters";
+@import "./partials/details";
+@import "./partials/header";
+@import "./partials/filter";
+
+
+body {
+    background-color: $dark-grey;
+}
 
 .hidden {
     display: none;

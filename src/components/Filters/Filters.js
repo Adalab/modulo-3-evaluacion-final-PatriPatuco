@@ -16,8 +16,8 @@ function Filters({
       <HouseFilter handleHouseFiltered={handleHouseFiltered} />
       
       {errorMsg ? (
-        <p className="errorMsg">
-          No hay ningún personaje que coincida con la palabra {charFiltered}
+        <p className="form__errorMsg">
+          There is no character matching with {charFiltered}
         </p>
       ) : null}
     </fieldset>

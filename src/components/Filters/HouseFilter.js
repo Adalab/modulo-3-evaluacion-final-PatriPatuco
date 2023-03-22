@@ -8,7 +8,7 @@ function HouseFilter({ handleHouseFiltered, houseFiltered }) {
     <>
       <label htmlFor="house" className="form__house">
         House selector
-        <select
+        <select className="form__house--list"
           name="house"
           id="house"
           onChange={handleOnChange}
