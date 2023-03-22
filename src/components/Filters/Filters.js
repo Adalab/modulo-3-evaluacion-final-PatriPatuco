@@ -1,14 +1,26 @@
 import CharFilter from "./CharFilter";
 import HouseFilter from "./HouseFilter";
 
-function Filters({ handleHouseFiltered, handleCharFiltered, charFiltered }) {
+function Filters({
+  handleHouseFiltered,
+  handleCharFiltered,
+  charFiltered,
+  errorMsg,
+}) {
   return (
-    <form className="form">
+    <fieldset className="form">
       <CharFilter
-        handleCharFiltered={handleCharFiltered} charFiltered = {charFiltered}
+        handleCharFiltered={handleCharFiltered}
+        charFiltered={charFiltered}
       />
       <HouseFilter handleHouseFiltered={handleHouseFiltered} />
-    </form>
+      
+      {errorMsg ? (
+        <p className="errorMsg">
+          No hay ningún personaje que coincida con la palabra {charFiltered}
+        </p>
+      ) : null}
+    </fieldset>
   );
 }
 

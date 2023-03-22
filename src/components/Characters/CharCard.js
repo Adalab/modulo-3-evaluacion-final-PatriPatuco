@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function CharCard({ eachChar }) {
   return (
     <Link to={`/character/${eachChar.id}`}>
-      <li className="chars__item">
+      <li key={eachChar.id} className="chars__item">
         <img
           className="chars__img"
           src={

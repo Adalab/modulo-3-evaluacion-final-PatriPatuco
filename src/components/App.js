@@ -10,37 +10,50 @@ import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 
 
 function App() {
-  const [chars, setChars] = useState ([]);
-  const [houseFiltered, setHouseFiltered] = useState("Gryffindor")
+  const [chars, setChars] = useState([]);
+  const [houseFiltered, setHouseFiltered] = useState("Gryffindor");
   const [charFiltered, setCharFiltered] = useState("");
+  const [errorMsg, setErrorMsg] = useState(false);
 
   const handleHouseFiltered = (value) => {
     setHouseFiltered(value);
-  }
+  };
 
   const handleCharFiltered = (value) => {
     setCharFiltered(value);
-  }
+  };
 
   // Filter the character list if the user search for a name
   const getCharFiltered = () => {
     return chars.filter((eachChar) =>
-      eachChar.name.toLocaleLowerCase().includes(charFiltered.toLocaleLowerCase())
+      eachChar.name.toLowerCase().includes(charFiltered.toLowerCase())
     );
-  }
+  };
 
-// Show the house acording to the value of the selected input
-useEffect(() => {
-  api(houseFiltered).then((dataChar) => {
-    setChars(dataChar);
-  });
-}, [houseFiltered]);
+  // Set error message if the filtered character list is empty
+  useEffect(() => {
+    const filteredChars = getCharFiltered();
+    if (filteredChars.length === 0) {
+      setErrorMsg(true);
+    } else {
+      setErrorMsg(false);
+    }
+  }, [charFiltered, chars]);
 
-// Send character information to the character detail page
-const {pathname} = useLocation();
-const dataUrl = matchPath("/character/:id", pathname);
-const characterId = dataUrl !== null ? dataUrl.params.id : null;
-const characterFind = getCharFiltered().find((eachChar) =>eachChar.id === characterId);
+  // Show the house according to the value of the selected input
+  useEffect(() => {
+    api(houseFiltered).then((dataChar) => {
+      setChars(dataChar);
+    });
+  }, [houseFiltered]);
+
+  // Send character information to the character detail page
+  const { pathname } = useLocation();
+  const dataUrl = matchPath("/character/:id", pathname);
+  const characterId = dataUrl !== null ? dataUrl.params.id : null;
+  const characterFind = getCharFiltered().find(
+    (eachChar) => eachChar.id === characterId
+  );
 
   return (
     <div className="App">
@@ -56,6 +69,7 @@ const characterFind = getCharFiltered().find((eachChar) =>eachChar.id === charac
                   handleCharFiltered={handleCharFiltered}
                   charFiltered={charFiltered}
                   houseFiltered={houseFiltered}
+                  errorMsg={errorMsg}
                 />
                 <Characters chars={getCharFiltered()} />
               </>

@@ -1,7 +1,11 @@
+import { Link } from "react-router-dom";
+
 function CharDetail({ characterFind }) {
   return (
     <div>
-      asdfasdfads
+      <Link to="/">
+        <button>Volver atrás</button>
+      </Link>
       <img
         className="char-det__img"
         src={
@@ -13,9 +17,12 @@ function CharDetail({ characterFind }) {
       />
       <h3 className="char-det__name">{characterFind.name}</h3>
       <p className="char-det__text">{characterFind.aka}</p>
+      <p className="char-det__text">House of {characterFind.house}</p>
       <p className="char-det__text">{characterFind.gender}</p>
-      <p className="char-det__text">{characterFind.species}</p>
-      <p className="char-det__text">{characterFind.alive === true ? "❤️" : "💀"}</p>
+      <p className="char-det__text">Specie: {characterFind.species}</p>
+      <p className="char-det__text">
+       Status: {characterFind.alive === true ? "❤️" : "💀"}
+      </p>
     </div>
   );
 }
