@@ -8,7 +8,8 @@ function api() {
                 name: eachChar.name,
                 species: eachChar.species,
                 house: eachChar.house,
-                alive: eachChar.alive
+                alive: eachChar.alive,
+                image: eachChar.image
                 };
             });
             return dataChar;
