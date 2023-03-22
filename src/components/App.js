@@ -1,15 +1,18 @@
 /* SECCIÓN DE IMPORT */
-
-// - De React
-// - Nuestros
-// - Sass
 import '../styles/App.scss';
+import api from "../services/api"
+import { useEffect, useState } from 'react';
 // - Imágenes
 
-/* SECCIÓN DEL COMPONENTE */
 function App() {
-  /* VARIABLES ESTADO (DATOS) */
+  const [chars, setChars] = useState ([])
 
+  /* VARIABLES ESTADO (DATOS) */
+  useEffect(() => {
+    api().then((dataChar) => {
+            setChars(dataChar)
+    });
+  }, []);
   /* EFECTOS (día 5) */
 
   /* FUNCIONES HANDLER */
@@ -17,10 +20,10 @@ function App() {
   /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
 
   /* HTML */
-  return <div className="App">{/* Aquí va el HTML */}</div>;
+  return <div className="App">
+
+  </div>;
 }
 
 /* PROP-TYPES */
-
-/* EXPORT DEL COMPONENTE */
 export default App;
