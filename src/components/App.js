@@ -1,27 +1,24 @@
-/* SECCIÓN DE IMPORT */
 import '../styles/App.scss';
+import Header from './Header';
+import Form from './Form';
+import CharDetail from './CharDetail';
 import api from "../services/api"
 import { useEffect, useState } from 'react';
-// - Imágenes
+
 
 function App() {
   const [chars, setChars] = useState ([])
 
-  /* VARIABLES ESTADO (DATOS) */
   useEffect(() => {
     api().then((dataChar) => {
             setChars(dataChar)
     });
   }, []);
-  /* EFECTOS (día 5) */
 
-  /* FUNCIONES HANDLER */
-
-  /* FUNCIONES Y VARIABLES AUXILIARES PARA PINTAR EL HTML */
-
-  /* HTML */
   return <div className="App">
-
+    <Header />
+    <Form />
+    
   </div>;
 }
 
