@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 function CharCard({ eachChar }) {
   return (
     <Link to={`/character/${eachChar.id}`}>
-      <li className="chars__item">
+      <li className="chars__list--item">
         <img
-          className="chars__img"
+          className="chars__list--img"
           src={
             eachChar.image
               ? eachChar.image
@@ -13,8 +13,8 @@ function CharCard({ eachChar }) {
           }
           alt={eachChar.name}
         />
-        <h3 className="chars__name">{eachChar.name}</h3>
-        <p className="chars__text">{eachChar.species}</p>
+        <h3 className="chars__list--name">{eachChar.name}</h3>
+        <p className="chars__list--text">{eachChar.species}</p>
       </li>
     </Link>
   );

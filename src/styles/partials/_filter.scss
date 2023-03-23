@@ -2,6 +2,8 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
+    padding-bottom: 3rem;
+    border-bottom: solid $light-grey 1px;
 
     &__house, &__char {
         font-family: $regular-font;

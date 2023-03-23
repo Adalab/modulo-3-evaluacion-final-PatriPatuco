@@ -7,8 +7,8 @@ const printChars = chars.map((eachChar) => {
 });
 
     return (
-      <section className="character-list">
-        <ul className="chars">
+      <section className="chars">
+        <ul className="chars__list">
           {printChars}
         </ul>
       </section>
