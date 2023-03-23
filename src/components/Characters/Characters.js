@@ -1,9 +1,11 @@
 import CharCard from "./CharCard";
 
 
-function Characters({chars}){
-const printChars = chars.map((eachChar) => {
-  return <CharCard key={eachChar.id} eachChar={eachChar}/>;
+function Characters({chars, gender}){
+  
+const filteredChars = gender === "all" ? chars : gender;
+const printChars = filteredChars.map((eachChar) => {
+  return <CharCard key={eachChar.id} eachChar={eachChar} />;
 });
 
     return (

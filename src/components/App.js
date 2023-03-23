@@ -15,6 +15,7 @@ function App() {
   const [chars, setChars] = useState([]);
   const [houseFiltered, setHouseFiltered] = useState("Gryffindor");
   const [charFiltered, setCharFiltered] = useState("");
+  const [genderFiltered, setGenderFiltered] = useState("all");
   const [localInput, setLocalInput] = useState("");
   const [errorMsg, setErrorMsg] = useState(false);
 
@@ -26,10 +27,16 @@ function App() {
     setCharFiltered(value);
   };
 
+    const handleGenderFilter = (value) => {
+      setGenderFiltered(value);
+    };
+
   // Filter the character list if the user search for a name
   const getCharFiltered = () => {
-    return chars.filter((eachChar) =>
-      eachChar.name.toLowerCase().includes(charFiltered.toLowerCase())
+    return chars.filter(
+      (eachChar) =>
+        eachChar.name.toLowerCase().includes(charFiltered.toLowerCase()) ||
+        eachChar.name.toUpperCase().includes(charFiltered.toUpperCase())
     );
   };
 
@@ -43,6 +50,14 @@ function App() {
       setErrorMsg(false);
     }
   }, [charFiltered, chars]);
+  
+  const filteredGender = chars.filter((eachChar) => {
+    if (genderFiltered === "all") {
+      return true;
+    } else {
+      return genderFiltered === eachChar.gender;
+    }
+  })
 
   // Show the house according to the value of the selected input
   useEffect(() => {
@@ -73,11 +88,12 @@ function App() {
                 <Filters
                   handleHouseFiltered={handleHouseFiltered}
                   handleCharFiltered={handleCharFiltered}
+                  handleGenderFilter={handleGenderFilter}
                   charFiltered={charFiltered}
                   houseFiltered={houseFiltered}
                   errorMsg={errorMsg}
                 />
-                <Characters chars={getCharFiltered()} />
+                <Characters chars={getCharFiltered()} gender={filteredGender} />
               </>
             }
           ></Route>

@@ -5,7 +5,7 @@
     padding-bottom: 3rem;
     border-bottom: solid $light-grey 1px;
 
-    &__house, &__char {
+    &__house, &__char, &__gender {
         font-family: $regular-font;
         font-size: 1.8rem;
         color: $light-grey;
@@ -24,6 +24,15 @@
     }
 
     &__char--input{
+        border-radius: 1rem;
+        font-family: $regular-font;
+        color: $dark-grey;
+        font-size: 1.6rem;
+        padding: 1rem;
+        background-color: $yellow-color;
+    }
+
+    &__gender--list{
         border-radius: 1rem;
         font-family: $regular-font;
         color: $dark-grey;
