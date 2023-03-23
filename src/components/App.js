@@ -47,6 +47,8 @@ function App() {
   // Show the house according to the value of the selected input
   useEffect(() => {
     api(houseFiltered).then((dataChar) => {
+      // Show characters list ordered alphabetically
+      dataChar.sort((a,b) => (a.name > b.name ? 1: -1));
       setChars(dataChar);
     });
   }, [houseFiltered]);
