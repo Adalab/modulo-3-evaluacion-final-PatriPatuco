@@ -3,6 +3,7 @@ import Header from './Header';
 import Filters from './Filters/Filters';
 import Characters from "./Characters/Characters";
 import CharDetail from './CharDetail';
+import NotFoundPage from './NotFoundPage';
 import api from "../services/api"
 import ls from "../services/localstorage"
 import { useEffect, useState } from 'react';
@@ -82,6 +83,7 @@ function App() {
             path="/character/:id"
             element={<CharDetail characterFind={characterFind} />}
           ></Route>
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
       </main>
     </div>
