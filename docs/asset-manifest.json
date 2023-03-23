@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.e5510bee.css",
+    "main.js": "./static/js/main.b53e67a9.js",
+    "static/media/HP-logo.png": "./static/media/HP-logo.2879d7430141718f4e73.png",
+    "static/media/unknow.png": "./static/media/unknow.7a1ab471d0d957f02fe0.png",
+    "index.html": "./index.html",
+    "main.e5510bee.css.map": "./static/css/main.e5510bee.css.map",
+    "main.b53e67a9.js.map": "./static/js/main.b53e67a9.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e5510bee.css",
+    "static/js/main.b53e67a9.js"
+  ]
+}
