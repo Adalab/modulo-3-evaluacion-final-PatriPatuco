@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import nophoto from "../../images/unknow.png";
 
 function CharCard({ eachChar }) {
   return (
@@ -6,11 +7,7 @@ function CharCard({ eachChar }) {
       <li className="chars__list--item">
         <img
           className="chars__list--img"
-          src={
-            eachChar.image
-              ? eachChar.image
-              : "https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter"
-          }
+          src={eachChar.image ? eachChar.image : nophoto}
           alt={eachChar.name}
         />
         <h3 className="chars__list--name">{eachChar.name}</h3>

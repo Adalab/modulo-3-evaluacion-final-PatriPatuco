@@ -3,6 +3,8 @@ import grifCrest from "../images/gryffindor.png";
 import slyCrest from "../images/slytherin.png";
 import huffCrest from "../images/hufflepuff.png";
 import ravCrest from "../images/ravenclaw.png";
+import nophoto from "../images/unknow.png";
+
 function CharDetail({ characterFind }) {
 
   const housesCrest = {
@@ -12,7 +14,7 @@ function CharDetail({ characterFind }) {
     Ravenclaw: ravCrest,
   } 
 
-  return characterFind ? (
+  return characterFind ? (<section className="char-container">
     <section className="char-det">
       <img
         className="char-det__crest"
@@ -25,7 +27,7 @@ function CharDetail({ characterFind }) {
         src={
           characterFind.image
             ? characterFind.image
-            : "https://via.placeholder.com/210x295/ffffff/666666/?text=HarryPotter"
+            : nophoto
         }
         alt={characterFind.name}
       />
@@ -50,6 +52,7 @@ function CharDetail({ characterFind }) {
           <button className="char-det__btn">Volver atrás</button>
         </Link>
       </section>
+    </section>
     </section>
   ) : (
     <p className="char-not-found">Character not found</p>
