@@ -5,7 +5,6 @@ import Characters from "./Characters/Characters";
 import CharDetail from './CharDetail';
 import NotFoundPage from './NotFoundPage';
 import api from "../services/api"
-import ls from "../services/localstorage"
 import { useEffect, useState } from 'react';
 import { Routes, Route, matchPath, useLocation } from "react-router-dom";
 
@@ -40,7 +39,7 @@ function App() {
       setGenderFiltered("all");
     };
 
-  // Filter the character list if the user search for a name
+  // Filter the character list if the user search for a name and gender8988
   const getCharFiltered = () => {
     return chars.filter(
       (eachChar) =>

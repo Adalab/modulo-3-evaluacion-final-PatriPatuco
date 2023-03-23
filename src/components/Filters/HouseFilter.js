@@ -1,4 +1,5 @@
 function HouseFilter({ handleHouseFiltered, houseFiltered }) {
+  
   const handleOnChange = (ev) => {
     const selectedHouse = ev.target.value;
     handleHouseFiltered(selectedHouse);

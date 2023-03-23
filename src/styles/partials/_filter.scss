@@ -1,49 +1,70 @@
 .form {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+
+  &__house,
+  &__char,
+  &__gender {
+    font-family: $regular-font;
+    font-size: 1.8rem;
+    color: $light-grey;
     display: flex;
-    justify-content: center;
-    gap: 2rem;
-    padding-bottom: 3rem;
-    border-bottom: solid $light-grey 1px;
+    flex-direction: column;
+    gap: 1rem;
+  }
 
-    &__house, &__char, &__gender {
-        font-family: $regular-font;
-        font-size: 1.8rem;
-        color: $light-grey;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+  &__house--list {
+    border-radius: 1rem;
+    font-family: $regular-font;
+    color: $dark-grey;
+    font-size: 1.6rem;
+    padding: 1rem;
+    background-color: $yellow-color;
+  }
 
-    &__house--list{
-        border-radius: 1rem;
-        font-family: $regular-font;
-        color: $dark-grey;
-        font-size: 1.6rem;
-        padding: 1rem;
-        background-color: $yellow-color;
-    }
+  &__char--input {
+    border-radius: 1rem;
+    font-family: $regular-font;
+    color: $dark-grey;
+    font-size: 1.6rem;
+    padding: 1rem;
+    background-color: $yellow-color;
+  }
 
-    &__char--input{
-        border-radius: 1rem;
-        font-family: $regular-font;
-        color: $dark-grey;
-        font-size: 1.6rem;
-        padding: 1rem;
-        background-color: $yellow-color;
-    }
+  &__gender--list {
+    border-radius: 1rem;
+    font-family: $regular-font;
+    color: $dark-grey;
+    font-size: 1.6rem;
+    padding: 1rem;
+    background-color: $yellow-color;
+  }
+}
 
-    &__gender--list{
-        border-radius: 1rem;
-        font-family: $regular-font;
-        color: $dark-grey;
-        font-size: 1.6rem;
-        padding: 1rem;
-        background-color: $yellow-color;
-    }
-    }
+.filter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 3rem;
 
-    .errorMsg {
-        font-family: $regular-font;
-        font-size: 1.6rem;
-        font-weight: bold;
-        color: red;}
+  &__errorMsg {
+    text-align: center;
+    font-family: $regular-font;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: red;
+    padding-top: 2rem;
+  }
+
+  &__reset {
+    margin-top: 2rem;
+    font-family: $regular-font;
+    font-size: 1.6rem;
+    background-color: $light-grey;
+    border-radius: 1rem;
+    padding: 1rem 2rem;
+    border-style: none;
+    color: $dark-grey;
+  }
+}

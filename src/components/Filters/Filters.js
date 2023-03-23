@@ -18,7 +18,7 @@ function Filters({
   }
 
   return (
-    <>
+    <section className="filter">
       <fieldset className="form">
         <CharFilter
           handleCharFiltered={handleCharFiltered}
@@ -34,13 +34,16 @@ function Filters({
           genderFiltered={genderFiltered}
         />
       </fieldset>
-      <button onClick={handleResetClick}>Reset</button>
+
       {errorMsg ? (
-        <p className="errorMsg">
+        <p className="filter__errorMsg">
           There is no character matching with {charFiltered}
         </p>
       ) : null}
-    </>
+      <button className="filter__reset" onClick={handleResetClick}>
+        Reset
+      </button>
+    </section>
   );
 }
 
