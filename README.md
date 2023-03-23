@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+![Adalab](https://beta.adalab.es/resources/images/adalab-logo-155x61-bg-white.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Evaluación final módulo 3
 
-## Available Scripts
+¡Hola! Bienvenides a mi repositorio donde podréis encontrar la página que he creado para la evaluación del módulo 3 en **Adalab**. 
 
-In the project directory, you can run:
+Puedes visitar el proyecto a través de este enlace: http://beta.adalab.es/modulo-3-evaluacion-final-patricia-becerra/
 
-### `npm start`
+## ¿En qué consiste?
+Si visitas la página, encontraras una wiki con todos los personajes del universo de Harry Potter compuesta por:
+```
+   - Un header donde poder filtrar por diferentes categorías como: género, casa y nombre.
+   - Una lista de personajes dependiendo de la casa a la que pertenecen.
+   - Cuando haces click en uno de estos personajes, te llevará a una nueva página para ver con más detalle su información.
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Lenguajes utilizados
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+En este caso, hemos creado esta página con ayuda de React y SaSS para los estilos.
 
-### `npm test`
+## Contenido
+En el Kit hay 3 tipos de ficheros y carpetas:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Los ficheros que están sueltos en la raíz del repositorio para configurar el proyecto (como gulpfile.js, package.json).
+- La carpeta `src/`: donde se encuentran los ficheros de la página web y los componentes que la conforman.
+- Las carpetas `public/` y `docs/`, que son generadas automáticamente cuando se arranca el proyecto. Son necesarias para que el kit lea los ficheros que hay dentro de `src/`, los procese y los genere dentro del las nombradas.
 
-### `npm run build`
+## Cómo trabajar con este repositorio
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> **NOTA:** Necesitas tener instalado [Node JS](https://nodejs.org/):
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Primeros pasos:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. **Crea tu propio repositorio.**
+1. **Copia todos los ficheros** de este proyecto de React en la carpeta raíz de tu repositorio.
+   - Recuerda que debes copiar **también los ficheros ocultos**.
+   - Si has decidido clonar este repo, no copies la carpeta `.git`. Si lo haces romperás tu propio repositorio.
+1. **Abre una terminal** en la carpeta raíz de tu repositorio.
+1. **Instala las dependencias** locales ejecutando en la terminal el comando:
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Arrancar el proyecto:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Si ya has cumplido todos los pasos anteriores, para arrancar el proyecto, tienes que ejecutar el comando:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm start
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Este comando:
 
-## Learn More
+- **Abre una ventana de Chrome y muestra tu página web**, al igual que hace el plugin de VS Code Live Server (Go live).
+- También **observa** todos los ficheros que hay dentro de la carpeta `src/`, para que cada vez que modifiques un fichero **refresca tu página en Chrome**.
+- También **procesa los ficheros** HTML, SASS / CSS y JS y los **genera y guarda en la carpeta `public/`**. Por ejemplo:
+   - Convierte los ficheros SASS en CSS.
+   - Combina los diferentes ficheros de HTML y los agrupa en uno o varios ficheros HTML.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Una vez ejecutes `npm start` ya puedes empezar a editar todos los ficheros que están dentro de la carpeta `src/` y programar cómodamente.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Importante: **El proyecto hay que arrancarlo con `npm start` cada vez que te empieces a programar.**
 
-### Code Splitting
+## ¿Falta algo?
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+¿Crees que hay algo en el proyecto que no funciona bien o que echas de menos? Estoy encantada de escuchar tu feedback y mejorarlo ❤️
