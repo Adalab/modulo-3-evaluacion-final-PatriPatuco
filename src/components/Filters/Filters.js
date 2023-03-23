@@ -7,8 +7,16 @@ function Filters({
   handleCharFiltered,
   handleGenderFilter,
   charFiltered,
+  houseFiltered,
+  genderFiltered,
   errorMsg,
+  handleReset,
 }) {
+
+  const handleResetClick = (ev) => {
+  handleReset();
+  }
+
   return (
     <>
       <fieldset className="form">
@@ -16,12 +24,19 @@ function Filters({
           handleCharFiltered={handleCharFiltered}
           charFiltered={charFiltered}
         />
-        <HouseFilter handleHouseFiltered={handleHouseFiltered} />
+        <HouseFilter
+          handleHouseFiltered={handleHouseFiltered}
+          houseFiltered={houseFiltered}
+        />
 
-        <GenderFilter handleGenderFilter={handleGenderFilter} />
+        <GenderFilter
+          handleGenderFilter={handleGenderFilter}
+          genderFiltered={genderFiltered}
+        />
       </fieldset>
+      <button onClick={handleResetClick}>Reset</button>
       {errorMsg ? (
-        <p className="form__errorMsg">
+        <p className="errorMsg">
           There is no character matching with {charFiltered}
         </p>
       ) : null}

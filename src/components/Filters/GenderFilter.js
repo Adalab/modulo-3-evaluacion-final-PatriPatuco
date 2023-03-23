@@ -1,4 +1,4 @@
-function GenderFilter({ handleGenderFilter }) {
+function GenderFilter({ handleGenderFilter, genderFiltered }) {
   const handleOnChange = (ev) => {
     const selectedGender = ev.target.value;
     handleGenderFilter(selectedGender);
@@ -13,6 +13,7 @@ function GenderFilter({ handleGenderFilter }) {
           name="gender"
           id="gender"
           onChange={handleOnChange}
+          value={genderFiltered}
         >
           <option value="all">All</option>
           <option value="female">Woman </option>
