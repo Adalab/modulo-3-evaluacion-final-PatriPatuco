@@ -4,7 +4,7 @@
 
 ¡Hola! Bienvenides a mi repositorio donde podréis encontrar la página que he creado para la evaluación del módulo 3 en **Adalab**. 
 
-Puedes visitar el proyecto a través de este enlace: http://beta.adalab.es/modulo-3-evaluacion-final-patricia-becerra/
+Puedes visitar el proyecto a través de este enlace: http://patripatuco.github.io/harry-potter-wiki/
 
 ## ¿En qué consiste?
 Si visitas la página, encontraras una wiki con todos los personajes del universo de Harry Potter compuesta por:
